@@ -1,6 +1,14 @@
 <div class="footer-wrap">
   <footer>
     <div class="container-fluid text-center py-5">
+      <!-- カスタムウィジェット -->
+      <div class="text-start mb-5">
+        <?php if (is_active_sidebar('main-sidebar')) : ?>
+          <ul class="menu">
+            <?php dynamic_sidebar('main-sidebar'); ?>
+          </ul>
+        <?php endif; ?>
+      </div>
       <div class="mb-5">
         <?php get_search_form(); ?>
       </div>

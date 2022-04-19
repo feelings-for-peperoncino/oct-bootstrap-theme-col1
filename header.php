@@ -17,42 +17,41 @@
   <div class="header-wrap">
     <header>
       <div class="container-fluid py-3">
-      <div class="d-flex align-items-center">
-        <!-- カスタムロゴ -->
-        <?php
-        if (function_exists('the_custom_logo')) {
-          the_custom_logo();
-        }
-        ?>
-
-        <div>
+        <div class="d-flex align-items-center">
+          <!-- カスタムロゴ -->
           <?php
-          if (display_header_text()) {
-          ?>
-            <h1 class="p-header__ttl"><?php bloginfo('name'); ?></h1>
-            <p class="p-header__info"><?php bloginfo('description'); ?></p>
-          <?php
+          if (function_exists('the_custom_logo')) {
+            the_custom_logo();
           }
           ?>
+
+          <div>
+            <?php
+            if (display_header_text()) {
+            ?>
+              <h1 class="p-header__ttl"><?php bloginfo('name'); ?></h1>
+              <p class="p-header__info"><?php bloginfo('description'); ?></p>
+            <?php
+            }
+            ?>
+          </div>
         </div>
+
+        <!-- カスタムメニュー -->
+        <?php wp_nav_menu(array(
+          'theme_location' => 'header-menu',
+          'menu_class' => 'd-flex flex-wrap fs-4',
+          'fallback_cb' => ''
+        )); ?>
+
+        <!-- カスタムメインビュー -->
+        <?php the_custom_header_markup(); ?>
       </div>
 
-      <!-- カスタムメニュー -->
-      <?php wp_nav_menu(array(
-        'theme_location' => 'header-menu',
-        'menu_class' => 'd-flex flex-wrap fs-4',
-        'fallback_cb' => ''
-      )); ?>
-
-      <!-- カスタムウィジェット -->
-      <?php if (is_active_sidebar('main-sidebar')) : ?>
-        <ul class="menu">
-          <?php dynamic_sidebar('main-sidebar'); ?>
-        </ul>
-      <?php endif; ?>
-
-      <!-- カスタムメインビュー -->
-      <?php the_custom_header_markup(); ?>
-      </div>
     </header>
+
+    <div class="container-fluid">
+    <?php custom_breadcrumb(); ?>
+    </div>
+
   </div>
