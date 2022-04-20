@@ -48,10 +48,10 @@
         <?php the_custom_header_markup(); ?>
       </div>
 
+      <!-- パンくずリスト -->
+      <div class="container-fluid">
+        <?php custom_breadcrumb(); ?>
+      </div>
     </header>
-
-    <div class="container-fluid">
-    <?php custom_breadcrumb(); ?>
-    </div>
 
   </div>
