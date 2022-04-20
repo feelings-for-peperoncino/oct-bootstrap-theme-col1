@@ -45,7 +45,11 @@
         )); ?>
 
         <!-- カスタムメインビュー -->
-        <?php the_custom_header_markup(); ?>
+        <?php if (get_header_image()) : ?>
+          <div class="smple">
+            <img src="<?php header_image(); ?>" width="100%" alt="">
+          </div>
+        <?php endif; ?>
       </div>
 
       <!-- パンくずリスト -->

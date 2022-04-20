@@ -29,9 +29,9 @@ $custom_header_args = array(
   'width' => 1000,
   'height' => 198,
   // ヘッダー画像の横幅を自由に切り取れるかどうか(trueもしくはfalse)
-  'flex-width' => false,
+  'flex-width' => true,
   // ヘッダー画像の縦幅を自由に切り取れるかどうか(trueもしくはfalse)
-  'flex-height' => false,
+  'flex-height' => true,
   // ヘッダーテキストを表示するかどうかを指定する機能の使うかどうか(trueもしくはfalse)
   'header-text' => true,
   // ヘッダーテキストのデフォルトの色
