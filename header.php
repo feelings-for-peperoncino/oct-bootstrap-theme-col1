@@ -29,7 +29,11 @@
             <?php
             if (display_header_text()) {
             ?>
-              <h1 class="p-header__ttl"><?php bloginfo('name'); ?></h1>
+              <h1 class="p-header__ttl">
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                <?php bloginfo('name'); ?>
+                </a>
+              </h1>
               <p class="p-header__info"><?php bloginfo('description'); ?></p>
             <?php
             }
