@@ -4,6 +4,10 @@ Bootstrapを使用した1カラムタイプのシンプルなテーマです。
 
 # バージョン情報
 
+> バージョン:1.1.5  
+> 2022年5月13日
+>> - header.phpのグローバルメニューの並び方を調整しました。
+
 > バージョン:1.1.4  
 > 2022年5月1日
 >> - header.phpのhead内のtitleを自動取得するように調整しました。
@@ -41,7 +45,7 @@ Bootstrapを使用した1カラムタイプのシンプルなテーマです。
 
 ## 子テーマをダウンロード
 
-[GitHub](https://github.com/feelings-for-peperoncino/oct-bootstrap-theme-col1)
+[GitHub](https://github.com/feelings-for-peperoncino/oct-bootstrap-theme-col1-child)
 
 ## WordPressにアップロード
 

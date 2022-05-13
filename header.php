@@ -16,37 +16,48 @@
 <body <?php body_class(); ?>>
   <div class="header-wrap">
     <header>
-      <div class="container-fluid py-3">
-        <div class="d-flex align-items-center">
-          <!-- カスタムロゴ -->
-          <?php
-          if (function_exists('the_custom_logo')) {
-            the_custom_logo();
-          }
-          ?>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-xxl">
+            <!-- 検討中 -->
+            <div class="d-flex align-items-center">
+              <!-- カスタムロゴ -->
+              <?php
+              if (function_exists('the_custom_logo')) {
+                the_custom_logo();
+              }
+              ?>
+              <div>
+                <?php
+                if (display_header_text()) {
+                ?>
+                  <h1 class="p-header__ttl">
+                    <a href="<?php echo esc_url(home_url('/')); ?>">
+                      <?php bloginfo('name'); ?>
+                    </a>
+                  </h1>
+                  <p class="p-header__info"><?php bloginfo('description'); ?></p>
+                <?php
+                }
+                ?>
+              </div>
+            </div>
+            <!-- 検討中 -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div>
-            <?php
-            if (display_header_text()) {
-            ?>
-              <h1 class="p-header__ttl">
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <?php bloginfo('name'); ?>
-                </a>
-              </h1>
-              <p class="p-header__info"><?php bloginfo('description'); ?></p>
-            <?php
-            }
-            ?>
+            <!-- カスタムメニュー -->
+            <?php wp_nav_menu(array(
+              'theme_location' => 'header-menu',
+              'container' => 'div',
+              'container_id' => 'navbarSupportedContent',
+              'container_class' => 'collapse navbar-collapse',
+              'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+              'fallback_cb' => ''
+            )); ?>
+
           </div>
-        </div>
-
-        <!-- カスタムメニュー -->
-        <?php wp_nav_menu(array(
-          'theme_location' => 'header-menu',
-          'menu_class' => 'd-flex flex-wrap fs-4',
-          'fallback_cb' => ''
-        )); ?>
+        </nav>
 
         <!-- カスタムメインビュー -->
         <?php if (get_header_image()) : ?>
@@ -54,7 +65,6 @@
             <img src="<?php header_image(); ?>" width="100%" alt="">
           </div>
         <?php endif; ?>
-      </div>
 
       <!-- パンくずリスト -->
       <div class="container-fluid">
