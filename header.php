@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html <?php language_attributes(); ?>>
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="<?php bloginfo('charset'); ?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
   <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="<?php echo get_stylesheet_uri(); ?>">
+
+
   <?php wp_head(); ?>
 </head>
 
@@ -35,7 +34,9 @@
                       <?php bloginfo('name'); ?>
                     </a>
                   </h1>
+                  <?php $description = get_bloginfo( 'description', 'display' ); if ($description) : ?>
                   <p class="p-header__info"><?php bloginfo('description'); ?></p>
+                  <?php endif; ?>
                 <?php
                 }
                 ?>
