@@ -15,33 +15,37 @@
 <body <?php body_class(); ?>>
   <div class="header-wrap">
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-xxl">
-            <!-- 検討中 -->
-            <div class="d-flex align-items-center">
-              <!-- カスタムロゴ -->
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-xxl">
+          <!-- 検討中 -->
+          <div class="d-flex align-items-center">
+            <!-- カスタムロゴ -->
+            <?php
+            if (function_exists('the_custom_logo')) {
+              the_custom_logo();
+            }
+            ?>
+            <div>
               <?php
-              if (function_exists('the_custom_logo')) {
-                the_custom_logo();
+              if (display_header_text()) {
+              ?>
+                <h1 class="p-header__ttl">
+                  <a href="<?php echo esc_url(home_url('/')); ?>">
+                    <?php bloginfo('name'); ?>
+                  </a>
+                </h1>
+                <?php $description = get_bloginfo('description', 'display');
+                if ($description) : ?>
+                  <p class="p-header__info"><?php bloginfo('description'); ?></p>
+                <?php endif; ?>
+              <?php
               }
               ?>
-              <div>
-                <?php
-                if (display_header_text()) {
-                ?>
-                  <h1 class="p-header__ttl">
-                    <a href="<?php echo esc_url(home_url('/')); ?>">
-                      <?php bloginfo('name'); ?>
-                    </a>
-                  </h1>
-                  <?php $description = get_bloginfo( 'description', 'display' ); if ($description) : ?>
-                  <p class="p-header__info"><?php bloginfo('description'); ?></p>
-                  <?php endif; ?>
-                <?php
-                }
-                ?>
-              </div>
             </div>
+          </div>
+          <!-- メニューがある時 -->
+          <?php if (has_nav_menu('header-menu')) : ?>
             <!-- 検討中 -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -56,16 +60,22 @@
               'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
               'fallback_cb' => ''
             )); ?>
+            <!-- メニューがない時 -->
+          <?php else : ?>
 
-          </div>
-        </nav>
+          <?php endif; ?>
 
-        <!-- カスタムメインビュー -->
-        <?php if (get_header_image()) : ?>
-          <div class="smple">
-            <img src="<?php header_image(); ?>" width="100%" alt="">
-          </div>
-        <?php endif; ?>
+        </div>
+      </nav>
+
+
+
+      <!-- カスタムメインビュー -->
+      <?php if (get_header_image()) : ?>
+        <div class="smple">
+          <img src="<?php header_image(); ?>" width="100%" alt="">
+        </div>
+      <?php endif; ?>
 
       <!-- パンくずリスト -->
       <div class="container-fluid">
