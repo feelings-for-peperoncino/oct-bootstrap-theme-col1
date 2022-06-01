@@ -14,9 +14,9 @@
 
 <body <?php body_class(); ?>>
   <div class="header-wrap">
+    <!-- headerの色をカスタマイザーで変更できるようにする -->
     <header>
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color:<?php echo get_theme_mod('header_color', '#f8f9fa'); ?>">
         <div class="container-xxl">
           <!-- 検討中 -->
           <div class="d-flex align-items-center">
