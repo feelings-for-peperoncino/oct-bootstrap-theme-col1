@@ -5,7 +5,7 @@
   Author: Project Oct
   Author URI: https://project-oct.com
   Description: Bootstrapを使用した1カラムタイプのシンプルなテーマです。
-  Version: 1.2.1
+  Version: 1.2.2
   Tags: bootstrap
 */
 
@@ -15,12 +15,12 @@ main, footer {
   margin-right: auto;
 }
 
-header h1 a {
+header h2 a {
   color: inherit;
   text-decoration: none;
 }
 
-header h1 a:hover {
+header h2 a:hover {
   color: inherit;
 }
 

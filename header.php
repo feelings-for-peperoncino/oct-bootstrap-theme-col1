@@ -30,14 +30,14 @@
               <?php
               if (display_header_text()) {
               ?>
-                <h1 class="p-header__ttl">
+                <h2 class="mb-0 p-header__ttl">
                   <a href="<?php echo esc_url(home_url('/')); ?>">
                     <?php bloginfo('name'); ?>
                   </a>
-                </h1>
+                </h2>
                 <?php $description = get_bloginfo('description', 'display');
                 if ($description) : ?>
-                  <p class="p-header__info"><?php bloginfo('description'); ?></p>
+                  <p class="mb-0 p-header__info"><?php bloginfo('description'); ?></p>
                 <?php endif; ?>
               <?php
               }
@@ -82,5 +82,4 @@
         <?php custom_breadcrumb(); ?>
       </div>
     </header>
-
   </div>
