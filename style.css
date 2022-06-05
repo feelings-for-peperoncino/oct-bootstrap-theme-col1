@@ -5,7 +5,7 @@
   Author: Project Oct
   Author URI: https://project-oct.com
   Description: Bootstrapを使用した1カラムタイプのシンプルなテーマです。
-  Version: 1.2.3
+  Version: 1.2.4
   Tags: bootstrap
 */
 
@@ -50,4 +50,9 @@ div#breadcrumb ul li{
 img.custom-logo {
   max-width: 200px;
   max-height: 200px;
+}
+
+header nav a {
+  text-decoration: none;
+  color: inherit;
 }

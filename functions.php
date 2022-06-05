@@ -88,6 +88,26 @@ add_action('customize_register', function ($wp_customize) {
   )));
 });
 
+//グローバルナビの文字色をカスタマイザーから変更
+add_action('customize_register', function ($wp_customize) {
+  $wp_customize->add_setting('global_navi_color', array(
+    'default' => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'global_navi_color', array(
+    'label' => 'グローバルナビの文字色',
+    'section' => 'colors',
+    'settings' => 'global_navi_color',
+  )));
+});
+//グローバルナビの文字色をカスタマイザーから変更するためのcssを追加
+add_action('wp_head', function () {
+  echo '<style type="text/css">';
+  echo '.p-global-navi__item { color: ' . get_theme_mod('global_navi_color') . ' }';
+  echo '</style>';
+});
+
+
 
 
 

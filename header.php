@@ -57,7 +57,7 @@
               'container' => 'div',
               'container_id' => 'navbarSupportedContent',
               'container_class' => 'collapse navbar-collapse',
-              'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0',
+              'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0 p-global-navi__item',
               'fallback_cb' => ''
             )); ?>
             <!-- メニューがない時 -->
