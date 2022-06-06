@@ -126,6 +126,27 @@ add_action('wp_head', function () {
   echo '</style>';
 });
 
+//footerの文字色をカスタマイザーから変更
+add_action('customize_register', function ($wp_customize) {
+  $wp_customize->add_setting('footer_text_color', array(
+    'default' => '#333',
+    'sanitize_callback' => 'sanitize_hex_color',
+  ));
+  $wp_customize->add_control(new WP_Customize_Color_Control($wp_customize, 'footer_text_color', array(
+    'label' => 'フッターの文字色',
+    'section' => 'colors',
+    'settings' => 'footer_text_color',
+  )));
+});
+//footerの文字色をカスタマイザーから変更するためのcssを追加
+add_action('wp_head', function () {
+  echo '<style type="text/css">';
+  echo '.p-footer { color: ' . get_theme_mod('footer_text_color') . ' }';
+  echo '</style>';
+});
+
+
+
 // カスタマイザーにコピーライトを編集の項目を追加
 add_action('customize_register', function ($wp_customize) {
   $wp_customize->add_section('copyright', array(
