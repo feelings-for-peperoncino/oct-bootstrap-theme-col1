@@ -5,11 +5,11 @@
   Author: Project Oct
   Author URI: https://project-oct.com
   Description: Bootstrapを使用した1カラムタイプのシンプルなテーマです。
-  Version: 1.2.4
+  Version: 1.2.5
   Tags: bootstrap
 */
 
-main, footer {
+main {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;

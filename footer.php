@@ -1,5 +1,5 @@
 <div class="footer-wrap">
-  <footer>
+  <footer class="p-footer">
     <div class="container-fluid text-center py-5">
       <!-- カスタムウィジェット -->
       <div class="text-start mb-5">
