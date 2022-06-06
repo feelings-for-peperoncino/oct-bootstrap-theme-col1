@@ -18,7 +18,6 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light" style="background-color:<?php echo get_theme_mod('header_color', '#f8f9fa'); ?>">
         <div class="container-xxl">
-          <!-- 検討中 -->
           <div class="d-flex align-items-center">
             <!-- カスタムロゴ -->
             <?php
@@ -46,7 +45,6 @@
           </div>
           <!-- メニューがある時 -->
           <?php if (has_nav_menu('header-menu')) : ?>
-            <!-- 検討中 -->
             <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,7 +55,7 @@
               'container' => 'div',
               'container_id' => 'navbarSupportedContent',
               'container_class' => 'collapse navbar-collapse',
-              'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0 p-global-navi__item',
+              'menu_class' => 'navbar-nav ms-auto mb-2 mb-lg-0 p-global-navi__item',
               'fallback_cb' => ''
             )); ?>
             <!-- メニューがない時 -->
