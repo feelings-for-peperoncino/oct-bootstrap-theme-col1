@@ -12,8 +12,15 @@
       <div class="mb-5">
         <?php get_search_form(); ?>
       </div>
+      <!-- カスタマイザーのコピーライトの編集の文字を適用 -->
+      <div class="my-5">
+        <?php if (get_theme_mod('copyright')) : ?>
+          <small class="text-center"><?php echo get_theme_mod('copyright'); ?></small>
+        <?php endif; ?>
+      </div>
       <small>(c)Project Oct</small>
     </div>
+
   </footer>
 </div>
 

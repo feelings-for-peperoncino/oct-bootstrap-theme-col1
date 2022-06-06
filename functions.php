@@ -126,6 +126,24 @@ add_action('wp_head', function () {
   echo '</style>';
 });
 
+// カスタマイザーにコピーライトを編集の項目を追加
+add_action('customize_register', function ($wp_customize) {
+  $wp_customize->add_section('copyright', array(
+    'title' => 'コピーライト',
+    'priority' => 200,
+  ));
+  $wp_customize->add_setting('copyright', array(
+    'default' => 'Copyright © 2020',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+  $wp_customize->add_control('copyright', array(
+    'label' => 'コピーライト',
+    'section' => 'copyright',
+    'settings' => 'copyright',
+  ));
+});
+
+
 
 
 
