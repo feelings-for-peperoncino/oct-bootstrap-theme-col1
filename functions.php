@@ -164,7 +164,37 @@ add_action('customize_register', function ($wp_customize) {
   ));
 });
 
-
+//カスタマイザーにグローバルナビの位置という項目を作り、右にチェックを入れている時はmargin-left: auto;を追加
+add_action('customize_register', function ($wp_customize) {
+  $wp_customize->add_section('global_navi_position', array(
+    'title' => 'グローバルナビ',
+    'priority' => 200,
+  ));
+  $wp_customize->add_setting('global_navi_position', array(
+    'default' => 'left',
+    'sanitize_callback' => 'sanitize_text_field',
+  ));
+  $wp_customize->add_control('global_navi_position', array(
+    'label' => 'グローバルナビの位置',
+    'section' => 'global_navi_position',
+    'settings' => 'global_navi_position',
+    'type' => 'radio',
+    'choices' => array(
+      'left' => '左',
+      'right' => '右',
+    ),
+  ));
+});
+//グローバルナビの位置をカスタマイザーから変更するためのcssを追加
+add_action('wp_head', function () {
+  echo '<style type="text/css">';
+  if (get_theme_mod('global_navi_position') == 'left') {
+    echo '.p-global-navi { margin-left: 0; }';
+  } else {
+    echo '.p-global-navi { margin-left: auto; }';
+  }
+  echo '</style>';
+});
 
 
 
